@@ -28,6 +28,24 @@ public class GamePanel extends JPanel implements Runnable {
 
     @Override
     public void run() {
+        while (gameThread != null) {
+            update();
 
+            repaint();
+        }
+    }
+    public void update() {
+
+    }
+    public void paintComponent(Graphics G) {
+        super.paintComponent(G);
+
+        Graphics2D G2 = (Graphics2D) G;
+
+        G2.setColor(Color.white);
+
+        G2.fillRect(100, 100, titleSize, titleSize);
+
+        G2.dispose();
     }
 }
